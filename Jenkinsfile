@@ -18,6 +18,7 @@ pipeline {
                 sh 'mvn --version'
                 sh 'pwd'
                 sh 'ls -la'
+                sh 'mvn install'
                 sh 'mvn clean package -Dmaven.test.failure.ignore=true'
                 stash includes : 'target/*.jar', name: 'app'
             }
